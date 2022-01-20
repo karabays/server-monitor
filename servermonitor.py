@@ -9,7 +9,8 @@ import messages
 
 APP_FOLDER = Path(__file__).parent
 MQTT_HOST = configuration.get('mqtt')['host']
-logger.add(APP_FOLDER.joinpath("monitor.log"), rotation="1 week",level=configuration.get('log_level'))
+logger.add(APP_FOLDER.joinpath("monitor.log"), rotation="1 week",
+    level=configuration.get('log_level'))
 
 
 @click.group()

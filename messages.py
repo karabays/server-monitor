@@ -10,11 +10,11 @@ def get_messages():
     config_msgs = []
     state_msgs = []
 
-    for s in configuration.get('sensors'):
-        for k, v in s.items():
-            module = importlib.import_module('.'+k, package='sensors')
-            m = getattr(module, 'Sensor')
-            sensor = m(device_name, topic_prefix, v)
+    for sensor in configuration.get('sensors'):
+        for key, value in sensor.items():
+            module = importlib.import_module('.'+key, package='sensors')
+            mod = getattr(module, 'Sensor')
+            sensor = mod(device_name, topic_prefix, value)
 
             conf_msg = sensor.config_msg
             stat_msg = sensor.state_msg

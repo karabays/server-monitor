@@ -6,8 +6,8 @@ from loguru import logger
 class Sensor:
     def __init__(self, device_name, topic_prefix, params=None) -> None:
         self.mount_points = []
-        for p in params:
-            mount_point = MountPoint(device_name, topic_prefix, p)
+        for mount in params:
+            mount_point = MountPoint(device_name, topic_prefix, mount)
             self.mount_points.append(mount_point)
 
     @property
