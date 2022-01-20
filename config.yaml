@@ -1,0 +1,18 @@
+device_name: dev mach
+
+mqtt:
+  host: 192.168.178.31
+  topic_prefix: homeassistant/
+
+log_level: INFO
+
+sensors:
+ - cpu_loads:
+ - restart_needed:
+ - memory:
+ - uptime:
+ - storage:
+   - name: root
+     mount: '/'
+   - name: home
+     mount: /home
